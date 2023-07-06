@@ -39,7 +39,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
  Após rodar a aplicação é possível ver e testar os endpoints pela documentação gerada pelo Swagger.
  http://localhost:8080/api/v1/swagger-ui/index.html
 
-** /api/v1/person/register **
+* **/api/v1/person/register**
 
 ```json
   {
@@ -62,7 +62,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
   ]
 }
 ```
-** SUCCESS - HTTP STATUS - 201**
+* **SUCCESS - HTTP STATUS - 201**
 
 ```json
 {
@@ -70,7 +70,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** BAD REQUEST - HTTP STATUS - 400 **
+* **BAD REQUEST - HTTP STATUS - 400**
 
 ```json
 {
@@ -83,7 +83,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** VALIDATION INPUTS - BAD REQUESTS - 400 **
+* **VALIDATION INPUTS - BAD REQUESTS - 400**
 
 ```json
 {
@@ -101,7 +101,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** /api/v1/home-appliance/register **
+* **/api/v1/home-appliance/register**
 
 ```json
 {
@@ -113,7 +113,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** SUCCESS - HTTP STATUS - 201**
+* **SUCCESS - HTTP STATUS - 201**
 
 ```json
 {
@@ -121,7 +121,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** VALIDATION INPUTS - BAD REQUESTS - 400 **
+* **VALIDATION INPUTS - BAD REQUESTS - 400**
 
 ```json
 {
@@ -134,7 +134,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** /api/v1/address/register **
+* **/api/v1/address/register**
 
 ```json
 {
@@ -145,7 +145,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** SUCCESS - HTTP STATUS - 201**
+* **SUCCESS - HTTP STATUS - 201**
 
 ```json
 {
@@ -153,7 +153,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 }
 ```
 
-** VALIDATION INPUTS - BAD REQUESTS - 400 **
+* **VALIDATION INPUTS - BAD REQUESTS - 400**
 
 ```json
 {
