@@ -170,7 +170,7 @@ docker run --name db-energy -e POSTGRES_PASSWORD=minha-senha -p 5432:5432 -d pos
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-* [SpringBoot]([http://www.dropwizard.io/1.0.2/docs/](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)) - O framework Java utilizado.
+* [SpringBoot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) - O framework Java utilizado.
 * [Maven](https://maven.apache.org/) - Gerente de Dependência.
 * [PostgreSQL](https://www.postgresql.org/docs/) - Banco de dado relacional utilizado.
 * [Docker](https://hub.docker.com/_/docker-docs) - Caso prefira executar o postgres via docker, assim não precisa instalar o postgreSQL na máquina.
