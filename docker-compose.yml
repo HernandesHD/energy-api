@@ -1,0 +1,22 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: db_energy_dev
+      POSTGRES_PASSWORD: agade123
+
+  energy:
+    image: energy
+    ports:
+      - "8089:8089"
+    environment:
+      POSTGRES_URL: jdbc:postgresql://postgres:5432/db_energy_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: agade123
+    depends_on:
+      - postgres
