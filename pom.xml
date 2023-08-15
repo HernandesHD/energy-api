@@ -15,10 +15,7 @@
     <description>energy-api-v1</description>
     <properties>
         <java.version>17</java.version>
-<<<<<<< HEAD
         <docker.image.prefix>energy</docker.image.prefix>
-=======
->>>>>>> 8c86a07bf7eb7a0225ca11318b5ae43963298b73
     </properties>
     <dependencies>
         <dependency>
@@ -86,10 +83,7 @@
                 </configuration>
             </plugin>
         </plugins>
-<<<<<<< HEAD
         <finalName>${artifactId}</finalName>
-=======
->>>>>>> 8c86a07bf7eb7a0225ca11318b5ae43963298b73
     </build>
 
 </project>
