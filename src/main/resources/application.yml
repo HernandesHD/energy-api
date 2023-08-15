@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 server:
   port: 8089
 
+=======
+>>>>>>> 8c86a07bf7eb7a0225ca11318b5ae43963298b73
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver

@@ -2,6 +2,10 @@ package com.energy.api.controller;
 
 import com.energy.api.entity.Address;
 import com.energy.api.entity.AddressDTO;
+<<<<<<< HEAD
+=======
+import com.energy.api.entity.Person;
+>>>>>>> 8c86a07bf7eb7a0225ca11318b5ae43963298b73
 import com.energy.api.exceptions.PersonAlreadyExistsException;
 import com.energy.api.service.AddressService;
 import jakarta.validation.Valid;

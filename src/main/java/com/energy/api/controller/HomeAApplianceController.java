@@ -1,5 +1,10 @@
 package com.energy.api.controller;
 
+<<<<<<< HEAD
+=======
+import com.energy.api.entity.Address;
+import com.energy.api.entity.AddressDTO;
+>>>>>>> 8c86a07bf7eb7a0225ca11318b5ae43963298b73
 import com.energy.api.entity.HomeAppliances;
 import com.energy.api.entity.HomeAppliancesDTO;
 import com.energy.api.exceptions.PersonAlreadyExistsException;
