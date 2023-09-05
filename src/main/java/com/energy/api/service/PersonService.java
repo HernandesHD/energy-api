@@ -4,6 +4,7 @@ import com.energy.api.entity.Person;
 import com.energy.api.entity.PersonDTO;
 import com.energy.api.entity.PersonRelation;
 import com.energy.api.entity.PersonRelationDTO;
+import com.energy.api.exceptions.PersonAlreadyExistsException;
 import com.energy.api.repository.PersonRelationRepository;
 import com.energy.api.repository.PersonRepository;
 import jakarta.transaction.Transactional;
@@ -25,7 +26,6 @@ public class PersonService {
     }
 
     public Optional<Person> getPerson(Long id) {
-        //return personRepository.findByCpf(cpf);
         return personRepository.findById(id);
     }
 
@@ -36,8 +36,11 @@ public class PersonService {
         }
 
         Person person = new Person(personDTO);
-        List<PersonRelation> kinship = savePersonRelations(personDTO.kinship());
-        person.setKinship(kinship);
+        if(personDTO.kinship() != null) {
+            List<PersonRelation> kinship = savePersonRelations(personDTO.kinship());
+            person.setKinship(kinship);
+        }
+
         return Optional.of(personRepository.save(person));
     }
 
@@ -49,6 +52,13 @@ public class PersonService {
             personRelations.add(personRelation);
         }
         return personRelations;
+    }
+
+    @Transactional
+    public Optional<Person> deletePerson(Long id) {
+        Person person = personRepository.findById(id).orElseThrow(() -> new PersonAlreadyExistsException(""));
+        personRepository.deleteById(id);
+        return Optional.ofNullable(person);
     }
 
 }

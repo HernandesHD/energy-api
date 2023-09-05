@@ -22,9 +22,9 @@ public record PersonRelationDTO(
         //@JsonFormat(shape = JsonFormat.Shape.STRING)
         @NotNull(message = "The gender field cannot be empty.")
         Gender prGender,
-        //@NotNull(message = "[Person] The date of birth  field cannot be empty.")
+
         @Past(message = "The date of birth in date of birth field must be before the current date.")
-        @DateTimeFormat(style = "yyyy-MM-dd")
+        @DateTimeFormat(style = "MM-dd-yyyy")
         LocalDate prDateOfBirth,
         @NotBlank(message = "The email field cannot be empty.")
         @Email(message = "The email is invalid.")

@@ -1,20 +1,20 @@
 package com.energy.api.entity;
 
 import com.energy.api.enums.Gender;
+import com.energy.api.service.HomeApplianceService;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "_person")
+@Entity(name = "person")
+@Table(name = "person")
 public class Person {
 
     @Id
@@ -33,9 +33,28 @@ public class Person {
     private String email;
     @Column(unique = true, nullable = false)
     private String cpf;
+
     @OneToMany
     @JoinColumn(name = "person_id")
+    @Nullable
+    private List<Address> addresses = new ArrayList<>();
+
+    @OneToMany
+    @JoinColumn(name = "person_id")
+    @Nullable
     private List<PersonRelation> kinship = new ArrayList<>();
+
+    @OneToMany
+    @JoinColumn(name = "person_id")
+    @Nullable
+    private List<HomeAppliances> homeAppliances = new ArrayList<>();
+
+    /*@Builder
+    public Person(String name, @Nullable List<PersonRelation> kinship) {
+        this.name = name;
+        this.kinship = kinship;
+    }*/
+
 
     public Person(PersonDTO personDTO) {
         this.firstName = personDTO.firstName();
@@ -44,6 +63,14 @@ public class Person {
         this.dateOfBirth = personDTO.dateOfBirth();
         this.email = personDTO.email();
         this.cpf = personDTO.cpf();
+
+        if (personDTO.addresses() != null) {
+            for (AddressDTO addressDTO : personDTO.addresses()) {
+                var address = new Address(addressDTO);
+                addresses.add(address);
+            }
+        }
+
         if (personDTO.kinship() != null) {
             for (PersonRelationDTO personRelationDTO : personDTO.kinship()) {
                 PersonRelation personRelation = new PersonRelation(personRelationDTO);

@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${POSTGRES_URL:jdbc:postgresql://18.217.253.149:5432/db_energy_dev}
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/db_energy_dev}
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD:agade123}
   jpa:
